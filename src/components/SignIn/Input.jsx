@@ -1,4 +1,5 @@
 import React from 'react'
+import './Input.css'
 
 const Input = (props) => {
     const handleChange = (e) => {
@@ -6,7 +7,7 @@ const Input = (props) => {
     }
 
   return (
-    <input value={props.email} onChange={handleChange} placeholder={props.placeholder} type={props.type} id={props.id} />
+    <input className='input' value={props.email} onChange={handleChange} placeholder={props.placeholder} type={props.type} id={props.id} />
   )
 }
 

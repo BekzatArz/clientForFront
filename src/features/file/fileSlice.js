@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     files: [],
-    currentDir: null
+    currentDir: null,
+    popup: 'none',
+    dirStack: []
 }
 
 export const fileSlice = createSlice({
@@ -16,11 +18,20 @@ export const fileSlice = createSlice({
             state.currentDir = action.payload
         },
         addFile: (state, action) => {
-            state.files = [...files, action.payload]
+            state.files.push(action.payload)
+        },
+        setUpPopup: (state, action) => {
+            state.popup = action.payload
+        },
+        pushToStack: (state, action) => {
+            state.dirStack.push(action.payload)
+
+        },
+        popFromStack: (state, action) => {
+            state.dirStack.pop()
         }
-        
     }
 })
 
 export default fileSlice.reducer
-export const { setFiles, setCurrentDir, addFile } = fileSlice.actions
+export const { setFiles, setCurrentDir, addFile, setUpPopup, pushToStack, popFromStack} = fileSlice.actions

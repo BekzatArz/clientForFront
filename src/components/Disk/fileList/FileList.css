@@ -1,6 +1,14 @@
-
-.files {
-    display: flex;
+.files{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+    height: 500px;
+    overflow-y: auto;
+    background-color: white;
+    right: 10px;
+    top: 250px;
+    border-radius: 20px;
 }
 
 .filelist-header {
